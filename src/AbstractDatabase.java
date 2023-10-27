@@ -22,7 +22,7 @@ public abstract class AbstractDatabase<T> {
                 records.add(createRecordFrom(line));
             }
         } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception based on your application's needs
+            e.printStackTrace();
         }
 
     }
