@@ -35,7 +35,7 @@ public abstract class AbstractDatabase<T> {
 
     public ArrayList<T> returnAllRecords()
     {
-        return new ArrayList<>(this.records);
+        return this.records;
     }
 
     protected abstract String getSearchKey(T record);
