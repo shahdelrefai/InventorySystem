@@ -10,16 +10,16 @@ public class CustomerProductDatabase extends AbstractDatabase<CustomerProduct>{
     @Override
     public CustomerProduct createRecordFrom(String line) {
         String[] variables = this.extractVariablesFromLine(line);
-        return new CustomerProduct(variables[0], variables[1], LocalDate.parse(variables[2]));
+        return new CustomerProduct(variables[0], variables[1], LocalDate.parse(variables[2], DateTimeFormatter.ofPattern("dd-MM-yyyy")));
     }
 
     @Override
-    protected String getSearchKey(CustomerProduct record) {
+    public String getSearchKey(CustomerProduct record) {
         return record.getSearchKey();
     }
 
     @Override
-    protected String getRecordLine(CustomerProduct record) {
+    public String getRecordLine(CustomerProduct record) {
         return record.lineRepresentation();
     }
 }

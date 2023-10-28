@@ -29,8 +29,7 @@ public class CustomerProduct {
 
     public String lineRepresentation()
     {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yy");
-        return this.customerSSN + "," + this.productID + "," + this.purchaseDate.format(formatter);
+        return this.customerSSN + "," + this.productID + "," + this.purchaseDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
     public String getSearchKey()

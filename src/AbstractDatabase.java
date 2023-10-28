@@ -12,11 +12,12 @@ public abstract class AbstractDatabase<T> {
     {
         this.records = new ArrayList<>();
         this.filename = filename;
+        this.readFromFile();
     }
 
     public void readFromFile()
     {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(this.filename))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 records.add(createRecordFrom(line));

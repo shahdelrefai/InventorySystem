@@ -22,6 +22,11 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public float getPrice()
+    {
+        return this.price;
+    }
+
     public String lineRepresentation()
     {
         return this.productID + "," + this.productName + "," + this.manufacturerName + "," + this.supplierName + "," + this.quantity + "," + this.price;
